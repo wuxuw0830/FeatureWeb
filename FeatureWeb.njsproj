@@ -31,6 +31,9 @@
   </PropertyGroup>
   <ItemGroup>
     <None Include="public\javascripts\_references.js" />
+    <Content Include="public\assets\db.json">
+      <SubType>Code</SubType>
+    </Content>
     <Content Include="public\font\glyphicons-halflings-regular.eot" />
     <Content Include="public\font\glyphicons-halflings-regular.svg" />
     <Content Include="public\font\glyphicons-halflings-regular.ttf" />
@@ -82,12 +85,20 @@
     <Folder Include="public\font\" />
     <Folder Include="public\images\" />
     <Folder Include="public\javascripts\" />
+    <Folder Include="public\assets\" />
     <Folder Include="public\stylesheets\" />
     <Folder Include="routes\" />
+    <Folder Include="routes\api\" />
     <Folder Include="views\" />
   </ItemGroup>
   <ItemGroup>
     <TypeScriptCompile Include="routes\about.ts" />
+    <TypeScriptCompile Include="routes\api\api-controller.ts">
+      <SubType>Code</SubType>
+    </TypeScriptCompile>
+    <TypeScriptCompile Include="routes\api\api-routes.ts">
+      <SubType>Code</SubType>
+    </TypeScriptCompile>
     <TypeScriptCompile Include="routes\contact.ts" />
     <TypeScriptCompile Include="routes\login.ts" />
   </ItemGroup>
