@@ -5,7 +5,7 @@ import * as path from 'path';
 import { createServer, IncomingMessage, request, Server, ServerResponse } from 'http';
 import { ApiRouter } from './routes/api/api-routes'; 
 
-//Import Pug View
+//import Pug View 
 import routes from './routes/index';
 import users from './routes/user';
 import about from './routes/about';
@@ -18,13 +18,13 @@ const app = express();
 const apiExpress = express();
 const apiRouter = new ApiRouter;
 
-//©T©wapi server port 
+//Api Server port initial
 const port = 5000;
 const apiHeader = 'Access-Control-Allow-Origin'
 const allowAllHeader = 'Access-Control-Allow-Headers'
 const allowAllMethod = 'Access-Control-Allow-Methods'
 const allMethod = 'GET,POST,PATCH,DELETE'
-// view engine setup
+// View engine Set Up
 app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'pug');
 
@@ -38,7 +38,8 @@ apiExpress.use((request: Request, response: express.Response, next: NextFunction
      */
     response.setHeader(apiHeader, "*")
     response.setHeader(allowAllHeader, "Origin, X-Requested-WIth, Content-Type, Accept, Authorization")
-    response.setHeader(allowAllMethod, allMethod)
+  response.setHeader(allowAllMethod, allMethod)
+  response.setHeader(allowAllMethod, allMethod)
     next();
 })
 apiExpress.use('', apiRouter.router)
@@ -94,7 +95,7 @@ apiExpress.listen(port, () => {
 );
 const server = app.listen(app.get('port'), function () {
     debug(`Express server listening on port ${(server.address() as AddressInfo).port}`);
-  //  debug(`Express server listening on port ${3001}`);
+    //  debug(`Express server listening on port ${3001}`);
 });
 
 //Api server , its port = 5000

@@ -28,8 +28,8 @@
     "content": "Success",
     "result": null
   },
-  "USERINFO": {
-    "code": "200",
+  "userInformation": {
+    "code": 200,
     "content": "Success",
     "result": {
       "memberName": "Kelly",

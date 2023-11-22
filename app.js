@@ -3,7 +3,7 @@ Object.defineProperty(exports, "__esModule", { value: true });
 const express = require("express");
 const path = require("path");
 const api_routes_1 = require("./routes/api/api-routes");
-//Import Pug View
+//import Pug View 
 const index_1 = require("./routes/index");
 const user_1 = require("./routes/user");
 const about_1 = require("./routes/about");
@@ -13,13 +13,13 @@ const debug = require('debug')('my express app');
 const app = express();
 const apiExpress = express();
 const apiRouter = new api_routes_1.ApiRouter;
-//�T�wapi server port 
+//Api Server port initial
 const port = 5000;
 const apiHeader = 'Access-Control-Allow-Origin';
 const allowAllHeader = 'Access-Control-Allow-Headers';
 const allowAllMethod = 'Access-Control-Allow-Methods';
 const allMethod = 'GET,POST,PATCH,DELETE';
-// view engine setup
+// View engine Set Up
 app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'pug');
 app.use(express.static(path.join(__dirname, 'public')));
@@ -32,6 +32,7 @@ apiExpress.use((request, response, next) => {
      */
     response.setHeader(apiHeader, "*");
     response.setHeader(allowAllHeader, "Origin, X-Requested-WIth, Content-Type, Accept, Authorization");
+    response.setHeader(allowAllMethod, allMethod);
     response.setHeader(allowAllMethod, allMethod);
     next();
 });

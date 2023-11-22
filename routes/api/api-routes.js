@@ -11,6 +11,8 @@ class ApiRouter {
     }
     initailizeRoutes() {
         this.router.post('/userLogin', apiControllers.getUserLogin);
+        this.router.get('/userInformation', apiControllers.getUserInfo);
+        this.router.get('/getHomeInfo', apiControllers.getHomeInfo);
     }
 }
 exports.ApiRouter = ApiRouter;
